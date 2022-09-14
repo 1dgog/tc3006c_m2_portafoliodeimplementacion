@@ -1,7 +1,7 @@
 # Portafolio de implementacion
 Javier de Golferichs García A01139500
 
-Se incluye en el README.md secciones para [Sin Framework](##-Sin-Framework) y  [Con Framework](##-Con-Framework)
+Se incluye en el README.md secciones para [Sin Framework](##-Sin-Framework) y  [Con Framework](##-Con-Framework) (más abajo)
 
 ## Sin Framework
 
