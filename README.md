@@ -1,4 +1,4 @@
-# tc3006c_portafoliodeimplementacion
+# Portafolio de implementacion
 Javier de Golferichs García A01139500
 
 Se incluye en el README.md [Sin Framework](##-Sin-Framework) y  [Con Framework](##-Con-Framework)
