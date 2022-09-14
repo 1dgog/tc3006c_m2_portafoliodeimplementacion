@@ -23,6 +23,9 @@ La salida de la función de clasificación es:
 
 Se inserta tabla con predicciones (datos de prueba).
 
+![image](https://user-images.githubusercontent.com/71610960/190268311-0b165a22-c0db-4cf4-bd68-45f5737e4a5c.png)
+
+
 ### Matrices de confusion para entrenamiento, validación y prueba.
 
 ![cf_train](https://user-images.githubusercontent.com/71610960/190257712-8ee9470c-fee5-4ba5-958c-5f6146937c15.png)
