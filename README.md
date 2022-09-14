@@ -19,15 +19,16 @@ La salida de la función de clasificación es:
 
 ![image](https://user-images.githubusercontent.com/71610960/190256081-83c0df57-3932-4e12-be87-11d091959c1a.png)
 
-### Predicciones
+### Predicciones.
 
 Se inserta tabla con predicciones (datos de prueba).
 
 ### Matrices de confusion para entrenamiento, validación y prueba.
 
-![cf_train](https://user-images.githubusercontent.com/71610960/190257430-519ecbb0-2954-4477-afcb-fbd44dfe6d2a.png)
-![cf_valid](https://user-images.githubusercontent.com/71610960/190257427-3d127cde-c2f7-43eb-b364-e6451192ae74.png)
-![cf_test](https://user-images.githubusercontent.com/71610960/190257428-a1af4d71-79e2-4303-bc0a-30908a9270ec.png)
+![cf_train](https://user-images.githubusercontent.com/71610960/190257712-8ee9470c-fee5-4ba5-958c-5f6146937c15.png)
+![cf_valid](https://user-images.githubusercontent.com/71610960/190257707-61bb74cc-3b1b-4f65-b9bc-d7d3d54036de.png)
+![cf_test](https://user-images.githubusercontent.com/71610960/190257713-b6627f37-2dce-4b3b-bc57-c5c01c5b607b.png)
+
 
 ## Con Framework
 
