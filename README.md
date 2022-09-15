@@ -14,6 +14,7 @@ Se hizo una vizualización de los datos.
 Para hacer la separación en subconjuntos (entrenamiento, validación y prueba), se utilizó sklearn.model_selection.train_test_split.
 
 ### Función de clasificación
+
 Se utilizó un $\alpha = 0.05$ y 10000 iteraciones en la función de clasificación.
 La salida de la función de clasificación es:
 
@@ -24,7 +25,7 @@ La salida de la función de clasificación es:
 |Clase 2|2|1|0.5|-0.239314728|-0.232469886|10.12620338|-0.87245963|0.335677986|
 |Clase 3|2|1|0.5|-0.068253754|-0.053346059|0.464055325|0.507980433|-5.732727431|
 
-### Predicciones.
+### Predicciones de subconjunto de prueba
 
 Se inserta tabla con predicciones (datos de prueba). Los vectores theta descritos en la tabla corresponden a los de la clase en forma `np.array(1/(1+np.exp(-(theta1[0]+theta1[1]*x_test1_a+theta1[2]*x_test1_b))))`, donde `x_test1_a` y `x_test1_b`, son las entradas de ambas características. 
 
@@ -48,7 +49,7 @@ Se inserta tabla con predicciones (datos de prueba). Los vectores theta descrito
 |13|13\.73|3\.25|0\.8659463308531189|0\.31827427917417533|1\.3773676883749057e-05|1|1|
 |14|14\.21|2\.65|0\.5069538111435282|0\.2007038165824665|0\.0005476806206184886|1|1|
 
-### Matrices de confusion para entrenamiento, validación y prueba.
+### Matrices de confusion para subconjuntos de entrenamiento, validación y prueba
 
 ![cf_train](https://user-images.githubusercontent.com/71610960/190315590-d8b68395-291b-4cd7-ab81-10fe80ce6637.png)
 ![cf_valid](https://user-images.githubusercontent.com/71610960/190315600-264f88fa-bf15-4be2-b12f-21c3eebdc624.png)
