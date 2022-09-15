@@ -28,9 +28,10 @@ Se inserta tabla con predicciones (datos de prueba).
 
 ### Matrices de confusion para entrenamiento, validación y prueba.
 
-![cf_train](https://user-images.githubusercontent.com/71610960/190257712-8ee9470c-fee5-4ba5-958c-5f6146937c15.png)
-![cf_valid](https://user-images.githubusercontent.com/71610960/190257707-61bb74cc-3b1b-4f65-b9bc-d7d3d54036de.png)
-![cf_test](https://user-images.githubusercontent.com/71610960/190257713-b6627f37-2dce-4b3b-bc57-c5c01c5b607b.png)
+![cf_train](https://user-images.githubusercontent.com/71610960/190315590-d8b68395-291b-4cd7-ab81-10fe80ce6637.png)
+![cf_valid](https://user-images.githubusercontent.com/71610960/190315600-264f88fa-bf15-4be2-b12f-21c3eebdc624.png)
+![cf_test](https://user-images.githubusercontent.com/71610960/190315605-5d502872-7716-40a3-b954-0adbdefb6e29.png)
+
 
 
 ## Con Framework
