@@ -23,7 +23,7 @@ La salida de la función de clasificación es:
 
 Se inserta tabla con predicciones (datos de prueba).
 
-![image](https://user-images.githubusercontent.com/71610960/190268311-0b165a22-c0db-4cf4-bd68-45f5737e4a5c.png)
+![image](https://user-images.githubusercontent.com/71610960/190315384-384d9adb-4c17-4844-8227-6c7b229a0b23.png)
 
 
 ### Matrices de confusion para entrenamiento, validación y prueba.
@@ -52,3 +52,6 @@ Se presentan los resultados de los puntajes obtenidos variando el número de cap
 ![image](https://user-images.githubusercontent.com/71610960/190313752-faa42d37-3eb4-4e74-982f-4cfe1159db89.png)
 
 ### Predicciones
+
+Se presentan las predicciones realizadas con el subconjunto de prueba.
+
