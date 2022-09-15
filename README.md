@@ -28,7 +28,7 @@ La salida de la función de clasificación es:
 
 Se inserta tabla con predicciones (datos de prueba).
 
-|index|alcohol|flavanoids|1|2|3|Real|Prediccion|
+|index|alcohol|flavanoids|1|2|3|**Real**|**Prediccion**|
 |---|---|---|---|---|---|---|---|
 |0|12\.43|3\.15|0\.8653171726479987|0\.5839271426938165|1\.2624743120118493e-05|2|1|
 |1|13\.05|3\.0|0\.784437459263086|0\.4372425034925187|4\.087372194117752e-05|1|1|
@@ -74,9 +74,9 @@ Se presentan los resultados de los puntajes obtenidos variando el número de cap
 
 ### Predicciones
 
-Se presentan las predicciones realizadas con el subconjunto de prueba, del modelo con 35 capas ocultas y 5 neuronas por capa (seleccionado como modelo refinado en reporte de análisis por no tener underfitting ni overfitting, y ser el más simple de los de 35 capas ocultas).
+Se presentan las predicciones realizadas con el subconjunto de prueba, del modelo con 35 capas ocultas y 5 neuronas por capa (seleccionado como modelo refinado en reporte de análisis por no tener underfitting ni overfitting, y ser el más simple de los de 35 capas ocultas). 
 
-|index |Clase real|Prediccion|alcohol|malic_acid|ash|alcalinity_of_ash|magnesium|total_phenols|flavanoids|nonflavanoid_phenols|proanthocyanins|color_intensity|hue|od280|proline|
+|index |**Clase real**|**Prediccion**|alcohol|malic_acid|ash|alcalinity_of_ash|magnesium|total_phenols|flavanoids|nonflavanoid_phenols|proanthocyanins|color_intensity|hue|od280|proline|
 |:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|
 |0|1|1|13.39|1.77|2.62|16.1|93|2.85|2.94|0.34|1.45|4.8|0.92|3.22|1195|
 |1|1|2|14.22|1.7|2.3|16.3|118|3.2|3|0.26|2.03|6.38|0.94|3.31|970|
