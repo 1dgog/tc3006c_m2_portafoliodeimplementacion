@@ -1,4 +1,4 @@
-# Portafolio de implementacion
+# Portafolio de implementacion para aprendizaje de máquina (módulo 2)
 Javier de Golferichs García A01139500
 
 Se incluye en el README.md secciones para [Sin Framework](##-Sin-Framework) y  [Con Framework](##-Con-Framework) (más abajo)
