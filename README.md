@@ -7,7 +7,7 @@ Se incluyen .ipynb y .py de ambas entregas (sin y con framework).
 
 ## Sin Framework
 
-Se usa el dataset de wines.data. Se hace una regresión logística de orden 2 que toma en cuenta dos características (alcohol, flavanoids).
+Se usa archivo utilizado es **wines.data**. Se hace una **regresión logística de orden 2** que toma en cuenta **dos características** (alcohol, flavanoids).
 
 Se hicieron columnas dummy binarias con base en la clase (1, 2 o 3), para hacer la clasificación.
 
@@ -60,6 +60,8 @@ Se inserta tabla con predicciones (datos de prueba). Los vectores theta descrito
 
 
 ## Con Framework
+
+El archivo utilizado es wine.data.
 
 Se hace una implementación de **redes neuronales**, en la que se varía el **de 5 a 35 número de capas ocultas**, y dentro de ese ciclo se itera de **5 a 35 neuronas**. 
 
