@@ -96,6 +96,6 @@ Se presentan las predicciones realizadas con el subconjunto de prueba, del model
 |10|13.88|5.04|2.23|20|80|0.98|0.34|0.4|0.68|4.9|0.58|1.33|415|3|3|
 |11|13.78|2.76|2.3|22|90|1.35|0.68|0.41|1.03|9.58|0.7|1.68|615|3|2|
 
-
+## Matriz de confusión para modelo simple (5 capas ocultas, 5 neuronas por capa) y modelo refinado (35 capas ocultas, 5 neuronas por capa)
 
 
