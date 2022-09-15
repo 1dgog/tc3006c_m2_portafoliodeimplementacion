@@ -66,7 +66,7 @@ Se inicia por importar la base de datos. Se usan todas las carácterísticas par
 
 Se separa el dataset en subconjuntos de entrenamiento (113, 13), validación (33, 13) y prueba (12, 13).
 
-### Puntajes
+### Puntajes para subconjuntos de entrenamiento, validación y prueba, variando parámetros
 
 Se presentan los resultados de los puntajes obtenidos variando el número de capas ocultas (5 a 35), y el número de partículas por capa (5 a 35).
 
@@ -74,7 +74,7 @@ Se presentan los resultados de los puntajes obtenidos variando el número de cap
 ![image](https://user-images.githubusercontent.com/71610960/190313732-027bd69d-d4c1-47a8-855e-8e3be8b8007f.png)
 ![image](https://user-images.githubusercontent.com/71610960/190313752-faa42d37-3eb4-4e74-982f-4cfe1159db89.png)
 
-### Predicciones
+### Predicciones de datos de prueba
 
 Se presentan las predicciones realizadas con el subconjunto de prueba, del modelo con 35 capas ocultas y 5 neuronas por capa (seleccionado como modelo refinado en reporte de análisis por no tener underfitting ni overfitting, y ser el más simple de los de 35 capas ocultas). 
 
