@@ -17,13 +17,12 @@ Para hacer la separación en subconjuntos (entrenamiento, validación y prueba),
 Se utilizó un $\alpha = 0.05$ y 10000 iteraciones en la función de clasificación.
 La salida de la función de clasificación es:
 
-![image](https://user-images.githubusercontent.com/71610960/190256081-83c0df57-3932-4e12-be87-11d091959c1a.png)
 | |theta inicial| | |J entrenamiento|J validacion|theta refinada| | |
 |:----|:----|:----|:----|:----|:----|:----|:----|:----|
 | |0|1|2| | |0|1|2|
-|Clase 1|2|1|0.5| | |-4.528507542|-0.218032685|2.888516617|
-|Clase 2|2|1|0.5| | |10.12620338|-0.87245963|0.335677986|
-|Clase 3|2|1|0.5| | |0.464055325|0.507980433|-5.732727431|
+|Clase 1|2|1|0.5|-0.145830812|-0.255904113|-4.528507542|-0.218032685|2.888516617|
+|Clase 2|2|1|0.5|-0.239314728|-0.232469886|10.12620338|-0.87245963|0.335677986|
+|Clase 3|2|1|0.5|-0.068253754|-0.053346059|0.464055325|0.507980433|-5.732727431|
 
 ### Predicciones.
 
