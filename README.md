@@ -35,4 +35,20 @@ Se inserta tabla con predicciones (datos de prueba).
 
 ## Con Framework
 
+Se hace una implementación de **redes neuronales**, en la que se varía el **de 5 a 35 número de capas ocultas**, y dentro de ese ciclo se itera de **5 a 35 neuronas**. 
 
+Se usa sklearn.neural_network.MLPClassifier como método de framework.
+
+Se inicia por importar la base de datos. Se usan todas las carácterísticas para hacer el modelo (13 características).
+
+Se separa el dataset en subconjuntos de entrenamiento (113, 13), validación (33, 13) y prueba (12, 13).
+
+### Puntajes
+
+Se presentan los resultados de los puntajes obtenidos variando el número de capas ocultas (5 a 35), y el número de partículas por capa (5 a 35).
+
+![image](https://user-images.githubusercontent.com/71610960/190313681-3d52b731-28ae-4830-8d9c-39b0591eac6b.png)
+![image](https://user-images.githubusercontent.com/71610960/190313732-027bd69d-d4c1-47a8-855e-8e3be8b8007f.png)
+![image](https://user-images.githubusercontent.com/71610960/190313752-faa42d37-3eb4-4e74-982f-4cfe1159db89.png)
+
+### Predicciones
