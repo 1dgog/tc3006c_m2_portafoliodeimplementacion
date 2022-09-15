@@ -19,11 +19,16 @@ La salida de la función de clasificación es:
 
 ![image](https://user-images.githubusercontent.com/71610960/190256081-83c0df57-3932-4e12-be87-11d091959c1a.png)
 
+|         | theta inicial | J entrenamiento | J validacion | theta refinada |
+| ------- | ------------- | --------------- | ------------ | -------------- |
+| 0       | 1             | 2               | 0            | 1              | 2 |
+| Clase 1 | 2             | 1               | 0.5          |                |  | \-4.5285075 | \-0.2180327 | 2.88851662 |
+| Clase 2 | 2             | 1               | 0.5          |                |  | 10.1262034 | \-0.8724596 | 0.33567799 |
+| Clase 3 | 2             | 1               | 0.5          |                |  | 0.46405533 | 0.50798043 | \-5.7327274 |
+
 ### Predicciones.
 
 Se inserta tabla con predicciones (datos de prueba).
-
-![image](https://user-images.githubusercontent.com/71610960/190315384-384d9adb-4c17-4844-8227-6c7b229a0b23.png)
 
 |index|alcohol|flavanoids|1|2|3|Real|Prediccion|
 |---|---|---|---|---|---|---|---|
