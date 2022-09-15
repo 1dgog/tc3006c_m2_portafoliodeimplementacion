@@ -61,11 +61,11 @@ Se inserta tabla con predicciones (datos de prueba). Los vectores theta descrito
 
 ## Con Framework
 
-El archivo utilizado es wine.data.
+El archivo utilizado es **wine.data**.
 
 Se hace una implementación de **redes neuronales**, en la que se varía el **de 5 a 35 número de capas ocultas**, y dentro de ese ciclo se itera de **5 a 35 neuronas**. 
 
-Se usa sklearn.neural_network.MLPClassifier como método de framework.
+Se usa **sklearn.neural_network.MLPClassifier** como método de framework.
 
 Se inicia por importar la base de datos. Se usan todas las carácterísticas para hacer el modelo (13 características).
 
