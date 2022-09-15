@@ -74,7 +74,7 @@ Se presentan los resultados de los puntajes obtenidos variando el número de cap
 
 ### Predicciones
 
-Se presentan las predicciones realizadas con el subconjunto de prueba, del modelo con 35 capas ocultas y 5 neuronas por capa (seleccionado como modelo refinado en reporte de análisis por no tener underfitting ni overfitting, y ser el más simple de los de 35 capas ocultas). (clase real y prediccion a la izquierda al lado de index).
+Se presentan las predicciones realizadas con el subconjunto de prueba, del modelo con 35 capas ocultas y 5 neuronas por capa (seleccionado como modelo refinado en reporte de análisis por no tener underfitting ni overfitting, y ser el más simple de los de 35 capas ocultas). (clase real y prediccion a la derecha).
 
 |index|Datos de entrada| | | | | | | | | | | | |**Clase real**|**Prediccion**|
 |:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|
