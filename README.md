@@ -3,6 +3,8 @@ Javier de Golferichs García A01139500
 
 Se incluye en el README.md secciones para [Sin Framework](##-Sin-Framework) y  [Con Framework](##-Con-Framework) (más abajo)
 
+Se incluyen .ipynb y .py de ambas entregas (sin y con framework).
+
 ## Sin Framework
 
 Se usa el dataset de wines.data. Se hace una regresión logística de orden 2 que toma en cuenta dos características (alcohol, flavanoids).
