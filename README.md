@@ -28,7 +28,7 @@ La salida de la función de clasificación es:
 
 Se inserta tabla con predicciones (datos de prueba).
 
-|index|alcohol|flavanoids|1|2|3|**Real**|**Prediccion**|
+|index|alcohol|flavanoids| Resultado de función logistica con vector teta 1|Resultado de función logistica con vector teta2|Resultado de función logistica con vector teta3|**Real**|**Prediccion**|
 |---|---|---|---|---|---|---|---|
 |0|12\.43|3\.15|0\.8653171726479987|0\.5839271426938165|1\.2624743120118493e-05|2|1|
 |1|13\.05|3\.0|0\.784437459263086|0\.4372425034925187|4\.087372194117752e-05|1|1|
