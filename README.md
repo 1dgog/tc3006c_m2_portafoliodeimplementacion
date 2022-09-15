@@ -26,7 +26,9 @@ La salida de la función de clasificación es:
 
 ### Predicciones.
 
-Se inserta tabla con predicciones (datos de prueba). Los vectores theta descritos en la tabla corresponden a los de la clase en forma `np.array(1/(1+np.exp(-(theta1[0]+theta1[1]*x_test1_a+theta1[2]*x_test1_b))))`, donde `x_test1_a` y `x_test1_b`, son las entradas de ambas características.
+Se inserta tabla con predicciones (datos de prueba). Los vectores theta descritos en la tabla corresponden a los de la clase en forma `np.array(1/(1+np.exp(-(theta1[0]+theta1[1]*x_test1_a+theta1[2]*x_test1_b))))`, donde `x_test1_a` y `x_test1_b`, son las entradas de ambas características. 
+
+(clase real y prediccion a la derecha)
 
 |index|alcohol|flavanoids| Resultado de función logistica con vector teta 1|Resultado de función logistica con vector teta 2|Resultado de función logistica con vector teta 3|**Real**|**Prediccion**|
 |---|---|---|---|---|---|---|---|
@@ -74,7 +76,9 @@ Se presentan los resultados de los puntajes obtenidos variando el número de cap
 
 ### Predicciones
 
-Se presentan las predicciones realizadas con el subconjunto de prueba, del modelo con 35 capas ocultas y 5 neuronas por capa (seleccionado como modelo refinado en reporte de análisis por no tener underfitting ni overfitting, y ser el más simple de los de 35 capas ocultas). (clase real y prediccion a la derecha).
+Se presentan las predicciones realizadas con el subconjunto de prueba, del modelo con 35 capas ocultas y 5 neuronas por capa (seleccionado como modelo refinado en reporte de análisis por no tener underfitting ni overfitting, y ser el más simple de los de 35 capas ocultas). 
+
+(clase real y prediccion a la derecha).
 
 |index|Datos de entrada| | | | | | | | | | | | |**Clase real**|**Prediccion**|
 |:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|
