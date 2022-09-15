@@ -17,7 +17,7 @@ Para hacer la separación en subconjuntos (entrenamiento, validación y prueba),
 Se utilizó un $\alpha = 0.05$ y 10000 iteraciones en la función de clasificación.
 La salida de la función de clasificación es:
 
-| |theta inicial| | |J entrenamiento|J validacion|:theta refinada :|
+| |theta inicial| | |J entrenamiento|J validacion|theta refinada |||
 |:----|:----|:----|:----|:----|:----|:----|:----|:----|
 | |0|1|2| | |0|1|2|
 |Clase 1|2|1|0.5|-0.145830812|-0.255904113|-4.528507542|-0.218032685|2.888516617|
