@@ -99,4 +99,5 @@ Se presentan las predicciones realizadas con el subconjunto de prueba, del model
 
 ### Matriz de confusión para modelo simple (5 capas ocultas, 5 neuronas por capa) y modelo refinado (35 capas ocultas, 5 neuronas por capa)
 
-
+![cf_test_con_framework_ini](https://user-images.githubusercontent.com/71610960/190330198-3cf1dc1f-2e61-4645-bad3-542cc5410910.png)
+![cf_test_con_framework_ref](https://user-images.githubusercontent.com/71610960/190330194-6cf4fc8f-5fe7-44bb-8ee0-91324447706e.png)
