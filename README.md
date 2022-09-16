@@ -86,8 +86,6 @@ Se presentan los resultados de los puntajes obtenidos variando el número de cap
 Se presentan las predicciones realizadas con el subconjunto de prueba, del modelo con 35 capas ocultas y 5 neuronas por capa (seleccionado como modelo refinado en reporte de análisis por no tener underfitting ni overfitting, y ser el más simple de los de 35 capas ocultas). 
 %% recuerda hacer el cambio a no la ultima de abajo derecha, sino arriba derecha para el valor obtenido
 
-(clase real y prediccion a la derecha).
-
 | index   |   Real |   Prediccion |   alcohol |   malic_acid |   ash |   alcalinity_of_ash |   magnesium |   total_phenols |   flavanoids |   nonflavanoid_phenols |   proanthocyanins |   color_intensity |   hue |   od280 |   proline |
 |---:|-------:|----:|----------:|-------------:|------:|--------------------:|------------:|----------------:|-------------:|-----------------------:|------------------:|------------------:|------:|--------:|----------:|
 |  0 |      1 |   2 |     13.39 |         1.77 |  2.62 |                16.1 |          93 |            2.85 |         2.94 |                   0.34 |              1.45 |              4.8  |  0.92 |    3.22 |      1195 |
