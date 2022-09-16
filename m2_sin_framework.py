@@ -12,12 +12,13 @@ Original file is located at
 """
 
 # Commented out IPython magic to ensure Python compatibility.
-from google.colab import drive
-drive.mount("/content/gdrive")
-!pwd
-#put your own path in google drive
+# %%capture
+# from google.colab import drive
+# drive.mount("/content/gdrive")
+# !pwd
+# #put your own path in google drive
 # %cd "/content/gdrive/MyDrive" 
-!ls
+# !ls
 
 """## Librerías
 
@@ -26,15 +27,12 @@ Se importan las librerías necesarias. sklearn solo se usa para hacer la divisi�
 
 import pandas as pd
 import numpy as np
-
 from matplotlib import pyplot as plt
 import seaborn as sns
-
 import math
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
-
 from google.colab import files
 
 """## Importacion de datos y columnas dummy
@@ -51,6 +49,7 @@ df["clase2"] = df["index"]==2
 df["clase2"] = df["clase2"].astype(int)
 df["clase3"] = df["index"]==3
 df["clase3"] = df["clase3"].astype(int)
+
 df
 
 """## Visualización binaria de datos."""
@@ -87,39 +86,6 @@ sns.lmplot(x='malic_acid',
            legend=True)
 plt.title("Visualización binaria para clase 1")
 plt.show()
-
-"""## Separación en subconjuntos y llamada a función de de clasificación
-
-Se hace la división entre datos de entrenamiento, validación y prueba.
-"""
-
-print('-------------CLASE 1-----------------')
-
-x_train1_a, x_r_a, y_train1_a, y_r_a = train_test_split(df["alcohol"], df['clase1'], test_size=0.33, random_state=0) ## el random state es semilla, se tomarán los mismos indices
-x_valid1_a, x_test1_a, y_valid1_a, y_test1_a = train_test_split(x_r_a, y_r_a, random_state=0)
-x_train1_b, x_r_b, y_train1_b, y_r_b = train_test_split(df["flavanoids"], df['clase1'], test_size=0.33, random_state=0)
-x_valid1_b, x_test1_b, y_valid1_b, y_test1_b = train_test_split(x_r_b, y_r_b, random_state=0)
-funcion_de_clasificacion2(x_train1_a, x_valid1_a, y_train1_a, y_valid1_a, x_train1_b, x_valid1_b, y_train1_b, y_valid1_b)
-
-print('-------------CLASE 2-----------------')
-
-x_train2_a, x_r_a, y_train2_a, y_r_a = train_test_split(df["alcohol"], df['clase2'], test_size=0.33, random_state=0)
-x_valid2_a, x_test2_a, y_valid2_a, y_test2_a = train_test_split(x_r_a, y_r_a, random_state=0)
-x_train2_b, x_r_b, y_train2_b, y_r_b = train_test_split(df["flavanoids"], df['clase2'], test_size=0.33, random_state=0)
-x_valid2_b, x_test2_b, y_valid2_b, y_test2_b = train_test_split(x_r_b, y_r_b, random_state=0)
-funcion_de_clasificacion2(x_train2_a, x_valid2_a, y_train2_a, y_valid2_a,x_train2_b, x_valid2_b, y_train2_b, y_valid2_b)
-
-print('-------------CLASE 3-----------------')
-
-x_train3_a, x_r_a, y_train3_a, y_r_a= train_test_split(df["alcohol"], df['clase3'], test_size=0.33, random_state=0)
-x_valid3_a, x_test3_a, y_valid3_a, y_test3_a = train_test_split(x_r_a, y_r_a, random_state=0)
-x_train3_b, x_r_b, y_train3_b, y_r_b = train_test_split(df["flavanoids"], df['clase3'], test_size=0.33, random_state=0)
-x_valid3_b, x_test3_b, y_valid3_b, y_test2_b = train_test_split(x_r_b, y_r_b, random_state=0)
-funcion_de_clasificacion2(x_train3_a, x_valid3_a, y_train3_a, y_valid3_a,x_train3_b, x_valid3_b, y_train3_b, y_valid3_b)
-
-# esto se usará para hacer la evaluación de las matrices de confusión haciendo de multicaso y no binario.
-x_train_multiclase, x_r_multiclase, y_train_multiclase, y_r_multiclase = train_test_split(df["alcohol"], df['index'], test_size=0.33, random_state=0)
-x_valid_multiclase, x_test_multiclase, y_valid_multiclase, y_test_multiclase = train_test_split(x_r_multiclase, y_r_multiclase, random_state=0)
 
 """## Función de clasificación
 
@@ -181,23 +147,49 @@ def funcion_de_clasificacion2(x_train, x_valid, y_train, y_valid, x2_train, x2_v
   print("J entrenamiento \n",J_train)
   print("theta \n",theta)
 
+  return theta
+
+"""## Separación en subconjuntos y llamada a función de de clasificación
+
+Se hace la división entre datos de entrenamiento, validación y prueba.
+"""
+
+print('-------------CLASE 1-----------------')
+
+x_train1_a, x_r_a, y_train1_a, y_r_a = train_test_split(df["alcohol"], df['clase1'], test_size=0.33, random_state=0) ## el random state es semilla, se tomarán los mismos indices
+x_valid1_a, x_test1_a, y_valid1_a, y_test1_a = train_test_split(x_r_a, y_r_a, random_state=0)
+x_train1_b, x_r_b, y_train1_b, y_r_b = train_test_split(df["flavanoids"], df['clase1'], test_size=0.33, random_state=0)
+x_valid1_b, x_test1_b, y_valid1_b, y_test1_b = train_test_split(x_r_b, y_r_b, random_state=0)
+theta1 = funcion_de_clasificacion2(x_train1_a, x_valid1_a, y_train1_a, y_valid1_a, x_train1_b, x_valid1_b, y_train1_b, y_valid1_b)
+
+print('-------------CLASE 2-----------------')
+
+x_train2_a, x_r_a, y_train2_a, y_r_a = train_test_split(df["alcohol"], df['clase2'], test_size=0.33, random_state=0)
+x_valid2_a, x_test2_a, y_valid2_a, y_test2_a = train_test_split(x_r_a, y_r_a, random_state=0)
+x_train2_b, x_r_b, y_train2_b, y_r_b = train_test_split(df["flavanoids"], df['clase2'], test_size=0.33, random_state=0)
+x_valid2_b, x_test2_b, y_valid2_b, y_test2_b = train_test_split(x_r_b, y_r_b, random_state=0)
+theta2 = funcion_de_clasificacion2(x_train2_a, x_valid2_a, y_train2_a, y_valid2_a,x_train2_b, x_valid2_b, y_train2_b, y_valid2_b)
+
+print('-------------CLASE 3-----------------')
+
+x_train3_a, x_r_a, y_train3_a, y_r_a= train_test_split(df["alcohol"], df['clase3'], test_size=0.33, random_state=0)
+x_valid3_a, x_test3_a, y_valid3_a, y_test3_a = train_test_split(x_r_a, y_r_a, random_state=0)
+x_train3_b, x_r_b, y_train3_b, y_r_b = train_test_split(df["flavanoids"], df['clase3'], test_size=0.33, random_state=0)
+x_valid3_b, x_test3_b, y_valid3_b, y_test2_b = train_test_split(x_r_b, y_r_b, random_state=0)
+theta3 = funcion_de_clasificacion2(x_train3_a, x_valid3_a, y_train3_a, y_valid3_a,x_train3_b, x_valid3_b, y_train3_b, y_valid3_b)
+
+# esto se usará para hacer la evaluación de las matrices de confusión haciendo de multicaso y no binario.
+x_train_multiclase, x_r_multiclase, y_train_multiclase, y_r_multiclase = train_test_split(df["alcohol"], df['index'], test_size=0.33, random_state=0)
+x_valid_multiclase, x_test_multiclase, y_valid_multiclase, y_test_multiclase = train_test_split(x_r_multiclase, y_r_multiclase, random_state=0)
+
+print(theta3)
+
 """## Predicciones
 
 Las variables maxValueIndex, toman la columna con el valor mayor del dataframe formado por los arrays comparacion1, comparacion2 y comparacion3 (que toman el valor de las características y theta para la regresión logistica). Este se usa para después hacer la matriz de confusión multicaso.
 """
 
-# Se ponen las thetas recuperadas de el print de más arriba
-
-#theta1 = [1.08516333425868, -0.6069427929053786, 2.669538458921063]; theta2 = [10.12620338472708, -0.8724596301387089, 0.3356779855872073]; theta3 = [1.70989168018572, 0.1985467996673931, -3.4967511269383458];
-
-#theta1 = [-4.528507542373424, -0.21803268506952203, 2.8885166171144476]; theta2 = [2.8906413582208326, -0.3023842108514869, 0.23510670042415469]; theta3 = [0.4640553251763694, 0.5079804326666967, -5.73272743121643];
-
-
-theta1 = [-4.528507542373424, -0.21803268506952203, 2.8885166171144476]; theta2 = [10.12620338472708, -0.8724596301387089, 0.3356779855872073]; theta3 = [0.4640553251763694, 0.5079804326666967, -5.73272743121643];
-
-## ----------------------------PARA CLASE 1--------------------------------------------##
-
-## ----------------------------TRAIN--------------------------------------------##
+## ----------------------------ENTRENAMIENTO--------------------------------------------##
 
 comparacion1 = np.array(1/(1+np.exp(-(theta1[0]+theta1[1]*x_train1_a+theta1[2]*x_train1_b))))
 comparacion2 = np.array(1/(1+np.exp(-(theta2[0]+theta2[1]*x_train1_a+theta2[2]*x_train1_b))))
@@ -238,29 +230,24 @@ print(maxValueIndex_test_1)
 
 """## Visualización de predicciones (conjunto de prueba) para README.md"""
 
-visualizacion_predicciones = pd.concat([pd.DataFrame(np.asarray(x_test1_a)),
+visualizacion_predicciones = pd.concat([pd.DataFrame(np.asarray(y_test_multiclase)), 
+                                        pd.DataFrame(np.asarray(maxValueIndex_test_1)),
+                                        pd.DataFrame(np.asarray(x_test1_a)),
                                         pd.DataFrame(np.asarray(x_test1_b)),
-                                        df2_test, 
-                                        pd.DataFrame(np.asarray(y_test_multiclase)), 
-                                        pd.DataFrame(np.asarray(maxValueIndex_test_1))], 
+                                        df2_test], 
                                        axis=1)
-visualizacion_predicciones.columns = ["alcohol","flavanoids","1","2","3","Real","Prediccion"]
-visualizacion_predicciones
+visualizacion_predicciones.columns = ["Real","Prediccion","alcohol","flavanoids","1","2","3"]
 
-"""## Matriz de confusión
+print(visualizacion_predicciones.to_markdown())
+
+"""## Matrices de confusión
 
 Se presenta la matriz de confusión con base en los valores obtenidos de las pruebas. Se obtiene usando la librería de sklearn importada más arriba.
 """
 
-print("Matriz de confusión para entrenamiento")
 cf_train = confusion_matrix(y_train_multiclase, maxValueIndex_train_1)
-print(cf_train)
-print("Matriz de confusión para validacion")
 cf_valid = confusion_matrix(y_valid_multiclase, maxValueIndex_valid_1)
-print(cf_valid)
-print("Matriz de confusión para prueba")
 cf_test = confusion_matrix(y_test_multiclase,maxValueIndex_test_1)
-print(cf_test)
 
 """### Visualización de matrices de confusión con sns"""
 
@@ -287,7 +274,7 @@ plt.savefig('cf_train.png')
 files.download("cf_train.png")
 plt.show()
 
-group_names = ["Correcto"," "," "," ","Correcto"," "," "," ","Correcto"]
+group_names = ["Correcto","Incorrecto","Incorrecto","Incorrecto","Correcto","Incorrecto","Incorrecto","Incorrecto","Correcto"]
 group_counts = ["{0:0.0f}".format(value) for value in
                 cf_valid.flatten()]
 group_percentages = ["{0:.2%}".format(value) for value in
@@ -302,7 +289,7 @@ plt.savefig('cf_valid.png')
 files.download("cf_valid.png")
 plt.show()
 
-group_names = ["Correcto"," "," "," ","Correcto"," "," "," ","Correcto"]
+group_names = ["Correcto","Incorrecto","Incorrecto","Incorrecto","Correcto","Incorrecto","Incorrecto","Incorrecto","Correcto"]
 group_counts = ["{0:0.0f}".format(value) for value in
                 cf_test.flatten()]
 group_percentages = ["{0:.2%}".format(value) for value in
