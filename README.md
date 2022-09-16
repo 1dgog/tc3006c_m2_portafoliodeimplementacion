@@ -31,7 +31,6 @@ La salida de la función de clasificación es:
 
 Se inserta tabla con predicciones (datos de prueba). Los vectores theta descritos en la tabla corresponden a los de la clase en forma `np.array(1/(1+np.exp(-(theta1[0]+theta1[1]*x_test1_a+theta1[2]*x_test1_b))))`, donde `x_test1_a` y `x_test1_b`, son las entradas de ambas características (alcohol, flavanoids). 
 
-(clase real y prediccion a la derecha)
 
 |    |   **Real** |   **Prediccion** |   alcohol |   flavanoids |          1 |        2 |           3 |
 |---:|-------:|-------------:|----------:|-------------:|-----------:|---------:|------------:|
