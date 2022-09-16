@@ -87,9 +87,11 @@ sns.lmplot(x='malic_acid',
 plt.title("Visualización binaria para clase 1")
 plt.show()
 
-"""## Función de clasificación
+"""## Clasificación
 
 Se hace una función que considere dos características.
+
+### Función de clasificación
 """
 
 def funcion_de_clasificacion2(x_train, x_valid, y_train, y_valid, x2_train, x2_valid, y2_train, y2_valid):
@@ -149,7 +151,7 @@ def funcion_de_clasificacion2(x_train, x_valid, y_train, y_valid, x2_train, x2_v
 
   return theta
 
-"""## Separación en subconjuntos y llamada a función de de clasificación
+"""### Separación en subconjuntos y llamada a función de de clasificación
 
 Se hace la división entre datos de entrenamiento, validación y prueba.
 """
@@ -178,15 +180,17 @@ x_train3_b, x_r_b, y_train3_b, y_r_b = train_test_split(df["flavanoids"], df['cl
 x_valid3_b, x_test3_b, y_valid3_b, y_test2_b = train_test_split(x_r_b, y_r_b, random_state=0)
 theta3 = funcion_de_clasificacion2(x_train3_a, x_valid3_a, y_train3_a, y_valid3_a,x_train3_b, x_valid3_b, y_train3_b, y_valid3_b)
 
+"""### Subconjuntos para evaluación de predicciones"""
+
 # esto se usará para hacer la evaluación de las matrices de confusión haciendo de multicaso y no binario.
 x_train_multiclase, x_r_multiclase, y_train_multiclase, y_r_multiclase = train_test_split(df["alcohol"], df['index'], test_size=0.33, random_state=0)
 x_valid_multiclase, x_test_multiclase, y_valid_multiclase, y_test_multiclase = train_test_split(x_r_multiclase, y_r_multiclase, random_state=0)
 
-print(theta3)
-
 """## Predicciones
 
-Las variables maxValueIndex, toman la columna con el valor mayor del dataframe formado por los arrays comparacion1, comparacion2 y comparacion3 (que toman el valor de las características y theta para la regresión logistica). Este se usa para después hacer la matriz de confusión multicaso.
+* Las variables maxValueIndex, toman la columna con el valor mayor de cada fila del dataframe formado por los arrays comparacion1, comparacion2 y comparacion3 (que toman el valor de las características y theta para la regresión logistica. 
+
+* Este se usa para después hacer la matriz de confusión multicaso.
 """
 
 ## ----------------------------ENTRENAMIENTO--------------------------------------------##
@@ -228,7 +232,7 @@ df2_test = pd.DataFrame(comparacion_test)
 maxValueIndex_test_1 = df2_test.idxmax(axis = 1).astype(int)
 print(maxValueIndex_test_1)
 
-"""## Visualización de predicciones (conjunto de prueba) para README.md"""
+"""### Visualización de predicciones (conjunto de prueba) para README.md"""
 
 visualizacion_predicciones = pd.concat([pd.DataFrame(np.asarray(y_test_multiclase)), 
                                         pd.DataFrame(np.asarray(maxValueIndex_test_1)),
@@ -242,14 +246,16 @@ print(visualizacion_predicciones.to_markdown())
 
 """## Matrices de confusión
 
-Se presenta la matriz de confusión con base en los valores obtenidos de las pruebas. Se obtiene usando la librería de sklearn importada más arriba.
+### Construccion de matriz de confusión
+
+Se obtiene usando sklearn.metrics.confusion_matrix
 """
 
 cf_train = confusion_matrix(y_train_multiclase, maxValueIndex_train_1)
 cf_valid = confusion_matrix(y_valid_multiclase, maxValueIndex_valid_1)
 cf_test = confusion_matrix(y_test_multiclase,maxValueIndex_test_1)
 
-"""### Visualización de matrices de confusión con sns"""
+"""### Visualización de matrices de confusión para subconjuntos de entrenamiento, validación y prueba"""
 
 # para que las columnas y filas vayan de 1 a 3 y no 0 a 2
 df_cf_train = pd.DataFrame(cf_train, index = [1, 2, 3],
