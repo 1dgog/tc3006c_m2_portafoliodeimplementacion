@@ -99,10 +99,10 @@ Se presentan los resultados de los puntajes obtenidos variando el número de cap
 |  4 | 0.939394 | 0.939394 | 0.939394 | 0.909091 | 0.939394 | 0.939394 | 0.939394 |
 |  5 | 0.909091 | 0.939394 | 0.939394 | 0.939394 | 0.939394 | 0.939394 | 0.939394 |
 |  6 | 0.818182 | 0.939394 | 0.939394 | 0.939394 | 0.939394 | 0.939394 | 0.939394 |
-|    |        5 |       10 |       15 |       20 |       25 |       30 |       35 |
 
 #### Puntajes para prueba
 
+|    |        5 |       10 |       15 |       20 |       25 |       30 |       35 |
 |---:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
 |  0 | 0.666667 | 1        | 0.583333 | 1        | 0.583333 | 0.583333 | 0.583333 |
 |  1 | 1        | 1        | 1        | 1        | 1        | 1        | 0.583333 |
@@ -134,6 +134,6 @@ Se presentan las predicciones realizadas con el subconjunto de prueba, del model
 
 ### Matriz de confusión para modelo simple (5 capas ocultas, 5 neuronas por capa) y modelo refinado (25 capas ocultas, 25 neuronas por capa)
 
-[cf_test_con_framework_ref.pdf](https://github.com/1dgog/tc3006c_m2_portafoliodeimplementacion/files/9590901/cf_test_con_framework_ref.pdf)
-[cf_test_con_framework_ini.pdf](https://github.com/1dgog/tc3006c_m2_portafoliodeimplementacion/files/9590902/cf_test_con_framework_ini.pdf)
+![cf_test_con_framework_ini](https://user-images.githubusercontent.com/71610960/190840004-86e83c38-231c-46e2-8bb7-868f1d08b4d7.png)
+![cf_test_con_framework_ref](https://user-images.githubusercontent.com/71610960/190840005-0c297c9b-1f19-41c6-a0d7-d0ffe90e0cf6.png)
 
