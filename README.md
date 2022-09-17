@@ -76,9 +76,41 @@ Se separa el dataset en subconjuntos de entrenamiento (113, 13), validación (33
 
 Se presentan los resultados de los puntajes obtenidos variando el número de capas ocultas (5 a 35), y el número de partículas por capa (5 a 35).
 
-![image](https://user-images.githubusercontent.com/71610960/190313681-3d52b731-28ae-4830-8d9c-39b0591eac6b.png)
-![image](https://user-images.githubusercontent.com/71610960/190313732-027bd69d-d4c1-47a8-855e-8e3be8b8007f.png)
-![image](https://user-images.githubusercontent.com/71610960/190313752-faa42d37-3eb4-4e74-982f-4cfe1159db89.png)
+#### Puntajes para entrenamiento
+
+|    |        5 |       10 |       15 |       20 |       25 |       30 |       35 |
+|---:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
+|  0 | 0.691729 | 0.992481 | 0.37594  | 0.992481 | 0.37594  | 0.37594  | 0.37594  |
+|  1 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.37594  |
+|  2 | 0.37594  | 0.992481 | 0.992481 | 0.37594  | 0.992481 | 0.37594  | 0.37594  |
+|  3 | 0.992481 | 0.37594  | 0.992481 | 0.992481 | 0.992481 | 0.37594  | 0.992481 |
+|  4 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.992481 |
+|  5 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.992481 |
+|  6 | 0.691729 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.992481 | 0.992481 |
+
+#### Puntajes para validación
+
+|    |        5 |       10 |       15 |       20 |       25 |       30 |       35 |
+|---:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
+|  0 | 0.818182 | 0.939394 | 0.424242 | 0.909091 | 0.424242 | 0.424242 | 0.424242 |
+|  1 | 0.909091 | 0.939394 | 0.909091 | 0.909091 | 0.909091 | 0.909091 | 0.424242 |
+|  2 | 0.424242 | 0.909091 | 0.939394 | 0.424242 | 0.909091 | 0.424242 | 0.424242 |
+|  3 | 0.909091 | 0.424242 | 0.909091 | 0.909091 | 0.909091 | 0.424242 | 0.909091 |
+|  4 | 0.939394 | 0.939394 | 0.939394 | 0.909091 | 0.939394 | 0.939394 | 0.939394 |
+|  5 | 0.909091 | 0.939394 | 0.939394 | 0.939394 | 0.939394 | 0.939394 | 0.939394 |
+|  6 | 0.818182 | 0.939394 | 0.939394 | 0.939394 | 0.939394 | 0.939394 | 0.939394 |
+|    |        5 |       10 |       15 |       20 |       25 |       30 |       35 |
+
+#### Puntajes para prueba
+
+|---:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
+|  0 | 0.666667 | 1        | 0.583333 | 1        | 0.583333 | 0.583333 | 0.583333 |
+|  1 | 1        | 1        | 1        | 1        | 1        | 1        | 0.583333 |
+|  2 | 0.583333 | 1        | 1        | 0.583333 | 1        | 0.583333 | 0.583333 |
+|  3 | 1        | 0.583333 | 1        | 1        | 1        | 0.583333 | 1        |
+|  4 | 1        | 1        | 1        | 1        | 1        | 1        | 1        |
+|  5 | 1        | 1        | 1        | 1        | 1        | 1        | 1        |
+|  6 | 0.666667 | 1        | 1        | 1        | 1        | 1        | 1        |
 
 ### Predicciones de datos de prueba
 
@@ -100,7 +132,8 @@ Se presentan las predicciones realizadas con el subconjunto de prueba, del model
 | 10 |       3 |   2 |     13.78 |         2.76 |  2.3  |                22   |          90 |            1.35 |         0.68 |                   0.41 |              1.03 |              9.58 |  0.7  |    1.68 |       615 |
 | 11 |       2 |   2 |     13.11 |         1.01 |  1.7  |                15   |          78 |            2.98 |         3.18 |                   0.26 |              2.28 |              5.3  |  1.12 |    3.18 |       502 |
 
-### Matriz de confusión para modelo simple (5 capas ocultas, 5 neuronas por capa) y modelo refinado (35 capas ocultas, 5 neuronas por capa)
+### Matriz de confusión para modelo simple (5 capas ocultas, 5 neuronas por capa) y modelo refinado (25 capas ocultas, 25 neuronas por capa)
 
-![cf_test_con_framework_ini](https://user-images.githubusercontent.com/71610960/190330198-3cf1dc1f-2e61-4645-bad3-542cc5410910.png)
-![cf_test_con_framework_ref](https://user-images.githubusercontent.com/71610960/190330194-6cf4fc8f-5fe7-44bb-8ee0-91324447706e.png)
+[cf_test_con_framework_ref.pdf](https://github.com/1dgog/tc3006c_m2_portafoliodeimplementacion/files/9590901/cf_test_con_framework_ref.pdf)
+[cf_test_con_framework_ini.pdf](https://github.com/1dgog/tc3006c_m2_portafoliodeimplementacion/files/9590902/cf_test_con_framework_ini.pdf)
+
