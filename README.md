@@ -1,7 +1,7 @@
 # Portafolio de implementacion para aprendizaje de máquina (módulo 2)
 Javier de Golferichs García A01139500
 
-Se incluye en el README.md secciones para [Sin Framework](##-Sin-Framework) y  [Con Framework](##conframework) (más abajo)
+Se incluye en el README.md secciones para [Sin Framework](##-Sin-Framework) y  [Con Framework](##-Con-Framework) (más abajo)
 
 Se incluyen .ipynb y .py de ambas entregas (sin y con framework). La que se usa para el [Portafolio de análisis](https://github.com/1dgog/tc3006c_m2_portafoliodeanalisis) es m2_con_framework
 
@@ -57,8 +57,6 @@ Las matrices de confusión corresponden a matrices de multicaso, tal que en la d
 ![cf_train](https://user-images.githubusercontent.com/71610960/190315590-d8b68395-291b-4cd7-ab81-10fe80ce6637.png)
 ![cf_valid](https://user-images.githubusercontent.com/71610960/190315600-264f88fa-bf15-4be2-b12f-21c3eebdc624.png)
 ![cf_test](https://user-images.githubusercontent.com/71610960/190315605-5d502872-7716-40a3-b954-0adbdefb6e29.png)
-
-
 
 ## Con Framework
 
