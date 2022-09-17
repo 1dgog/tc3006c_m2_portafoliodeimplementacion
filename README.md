@@ -1,7 +1,7 @@
 # Portafolio de implementacion para aprendizaje de máquina (módulo 2)
 Javier de Golferichs García A01139500
 
-Se incluye en el README.md secciones para [Sin Framework](##-Sin-Framework) y  [Con Framework](##-Con-Framework) (más abajo)
+Se incluye en el README.md secciones para [Sin Framework](##-Sin-Framework) y  [Con Framework](##conframework) (más abajo)
 
 Se incluyen .ipynb y .py de ambas entregas (sin y con framework). La que se usa para el [Portafolio de análisis](https://github.com/1dgog/tc3006c_m2_portafoliodeanalisis) es m2_con_framework
 
