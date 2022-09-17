@@ -62,7 +62,7 @@ Esté código es una simplificación de lo que se hace más adelante, que sirve 
 
 alm_1 = []
 cont = 0
-for ii in range (5, 40, 5):
+for ii in range (5, 45, 5):
   if cont == 1:
     alm_1.append(alm_jj)
   alm_jj = []
@@ -91,7 +91,7 @@ Estos datos se almacenan en vectores, tanto para los datos de entrenamiento como
 # 
 # cont = 0
 # 
-# for ii in range (5, 40, 5): # el número de ii (ii,jj) es el que modifica el número de capas ocultas
+# for ii in range (5, 45, 5): # el número de ii (ii,jj) es el que modifica el número de capas ocultas
 #   if cont == 1:
 #     scores_train.append(jj_scores_train)
 #     scores_valid.append(jj_scores_valid) # aqui estaba el error
@@ -137,6 +137,10 @@ print(pd.DataFrame(np.array(scores_train), columns = np.arange(5, 40, step = 5))
 print(pd.DataFrame(np.array(scores_valid), columns = np.arange(5, 40, step = 5)).to_latex(index=True))
 print(pd.DataFrame(np.array(scores_test), columns = np.arange(5, 40, step = 5)).to_latex(index=True))
 
+print(pd.DataFrame(np.array(scores_train), columns = np.arange(5, 40, step = 5)).to_markdown())
+print(pd.DataFrame(np.array(scores_valid), columns = np.arange(5, 40, step = 5)).to_markdown())
+print(pd.DataFrame(np.array(scores_test), columns = np.arange(5, 40, step = 5)).to_markdown())
+
 """Información de arreglos donde se almacenaron los puntajes"""
 
 print("--------------ENTRENAMIENTO--------------")
@@ -177,19 +181,88 @@ print(visualizacion_predicciones.to_latex(index=False))
 
 """## Visualización gráfica de resultados
 
-### Visualización de puntajes variando número de capas ocultas y de neuronas por capa en 3D
+### Visualización de puntajes variando número de capas ocultas y de neuronas por capa con heatmap
 """
+
+df_train = pd.DataFrame(np.around(np.array(scores_train),decimals=2), index = np.arange(5, 40, step = 5),
+                  columns = np.arange(5, 40, step = 5))
+s = sns.heatmap(df_train,annot=True, fmt="", cmap='Blues')
+s.set(xlabel='Neuronas por capa', ylabel='Capas ocultas')
+plt.title("Mapa de calor para puntajes de entrenamiento")
+plt.savefig('hm_train.pdf') 
+files.download("hm_train.pdf")
+plt.show()
+
+df_valid = pd.DataFrame(np.around(np.array(scores_valid),decimals=2), index = np.arange(5, 40, step = 5),
+                  columns = np.arange(5, 40, step = 5))
+s = sns.heatmap(df_valid,annot=True, fmt="", cmap='Blues')
+s.set(xlabel='Neuronas por capa', ylabel='Capas ocultas')
+plt.title("Mapa de calor para puntajes de validación")
+plt.savefig('hm_valid.pdf') 
+files.download("hm_valid.pdf")
+plt.show()
+
+df_test = pd.DataFrame(np.around(np.array(scores_test),decimals=2), index = np.arange(5, 40, step = 5),
+                  columns = np.arange(5, 40, step = 5))
+s = sns.heatmap(df_test,annot=True, fmt="", cmap='Blues')
+s.set(xlabel='Neuronas por capa', ylabel='Capas ocultas')
+plt.title("Mapa de calor para puntajes de prueba")
+plt.savefig('hm_test.pdf') 
+files.download("hm_test.pdf")
+plt.show()
+
+"""### Promedios con respecto al número de capas ocultas"""
+
+print(np.mean(np.array(scores_train), axis=1))
+print(np.mean(np.array(scores_valid), axis=1))
+print(np.mean(np.array(scores_test), axis=1))
+
+plt.plot(np.mean(np.array(scores_train), axis=1),label='Entrenamiento')
+plt.plot(np.mean(np.array(scores_valid), axis=1),label='Validación')
+plt.plot(np.mean(np.array(scores_test), axis=1),label='Prueba')
+plt.legend()
+ax = plt.gca()
+ax.set_ylim([0.4, 1])
+plt.xticks(np.arange(0, 7, step = 1),np.arange(5, 40, step = 5))
+plt.title('Promedios de puntajes por número de capas ocultas')
+plt.ylabel("Puntaje")
+plt.xlabel("Neuronas por capa")
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+plt.savefig('mean_scores.pdf') 
+files.download("mean_scores.pdf")
+plt.show()
+
+plt.plot(np.mean(np.array(scores_train), axis=0),label='Entrenamiento')
+plt.plot(np.mean(np.array(scores_valid), axis=0),label='Validación')
+plt.plot(np.mean(np.array(scores_test), axis=0),label='Prueba')
+plt.legend()
+ax = plt.gca()
+ax.set_ylim([0.4, 1])
+plt.xticks(np.arange(0, 7, step = 1),np.arange(5, 40, step = 5))
+plt.title('Promedios de puntajes por número de neuronas por capa')
+plt.ylabel("Puntaje")
+plt.xlabel("Capas ocultas")
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+plt.savefig('mean_scores_layer.pdf') 
+files.download("mean_scores_layer.pdf")
+plt.show()
+
+"""### Visualización de puntajes variando número de capas ocultas y de neuronas por capa en 3D"""
 
 # entrenamiento
 
 fig = plt.figure()
 ax = plt.axes(projection = "3d")
-capas = [5,10,15,20,25,30]
+capas = [5,10,15,20,25,30,35]
 unidades = [5,10,15,20,25,30, 35]
 data = np.array(scores_train)
 
 numOfCols = 7
-numOfRows = 6
+numOfRows = 7
 
 xpos = np.arange(0, numOfCols, 1)
 ypos = np.arange(0, numOfRows, 1)
@@ -220,12 +293,12 @@ plt.show()
 
 fig = plt.figure()
 ax = plt.axes(projection = "3d")
-capas = [5,10,15,20,25,30]
+capas = [5,10,15,20,25,30,35]
 unidades = [5,10,15,20,25,30, 35]
 data = np.array(scores_valid)
 
 numOfCols = 7
-numOfRows = 6
+numOfRows = 7
 
 xpos = np.arange(0, numOfCols, 1)
 ypos = np.arange(0, numOfRows, 1)
@@ -256,12 +329,12 @@ plt.show()
 
 fig = plt.figure()
 ax = plt.axes(projection = "3d")
-capas = [5,10,15,20,25,30]
+capas = [5,10,15,20,25,30,35]
 unidades = [5,10,15,20,25,30, 35]
 data = np.array(scores_test)
 
 numOfCols = 7
-numOfRows = 6
+numOfRows = 7
 
 xpos = np.arange(0, numOfCols, 1)
 ypos = np.arange(0, numOfRows, 1)
@@ -290,38 +363,38 @@ plt.show()
 
 """### Matrices de confusión para modelo simple y modelo refinado (presentados en README.md y sección de tecnica de regularización de reporte de análisis)"""
 
-df_cf_test_ini = pd.DataFrame(np.asarray([[0, 2, 0], [0, 7, 0],[0, 3, 0]]), index = [1, 2, 3],
+df_cf_test_ini = pd.DataFrame(np.array(almacenamiento_conf_mat_train)[1,1], index = [1, 2, 3],
                   columns = [1, 2, 3])
 group_names = ["Correcto","Incorrecto","Incorrecto","Incorrecto","Correcto","Incorrecto","Incorrecto","Incorrecto","Correcto"]
 group_counts = ["{0:0.0f}".format(value) for value in
-                np.array([[0, 2, 0], [0, 7, 0],[0, 3, 0]]).flatten()]
+                np.array(almacenamiento_conf_mat_train)[1,1].flatten()]
 group_percentages = ["{0:.2%}".format(value) for value in
-                     np.array([[0, 2, 0], [0, 7, 0],[0, 3, 0]]).flatten()/np.sum(np.array([[0, 2, 0], [0, 7, 0],[0, 3, 0]]))]
+                     np.array(almacenamiento_conf_mat_train)[1,1].flatten()/np.sum(np.array(almacenamiento_conf_mat_train)[1,1])]
 labels = [f"{v1}\n{v2}\n{v3}" for v1, v2, v3 in
           zip(group_names,group_counts,group_percentages)]
 
 labels = np.asarray(labels).reshape(3,3)
 sns.heatmap(df_cf_test_ini,annot=labels, fmt="", cmap='Blues')
 plt.title("Matriz de confusión para modelo inicial con subconjunto de prueba \n(5 capas ocultas, 5 neuronas por capa)")
-plt.savefig('cf_test_con_framework_ini.pdf') 
-files.download("cf_test_con_framework_ini.pdf")
+plt.savefig('cf_test_con_framework_ini.png') 
+files.download("cf_test_con_framework_ini.png")
 plt.show()
 
-df_cf_test_ref = pd.DataFrame(np.asarray([[1, 0, 1], [0, 7, 0],[1, 1, 1]]), index = [1, 2, 3],
+df_cf_test_ref = pd.DataFrame(np.array(almacenamiento_conf_mat_train)[5,5], index = [1, 2, 3],
                   columns = [1, 2, 3])
 group_names = ["Correcto","Incorrecto","Incorrecto","Incorrecto","Correcto","Incorrecto","Incorrecto","Incorrecto","Correcto"]
 group_counts = ["{0:0.0f}".format(value) for value in
-                np.array([[1, 0, 1], [0, 7, 0],[1, 1, 1]]).flatten()]
+                np.array(almacenamiento_conf_mat_train)[5,5].flatten()]
 group_percentages = ["{0:.2%}".format(value) for value in
-                     np.array([[1, 0, 1], [0, 7, 0],[1, 1, 1]]).flatten()/np.sum(np.array([[1, 0, 1], [0, 7, 0],[1, 1, 1]]))]
+                     np.array(almacenamiento_conf_mat_train)[5,5].flatten()/np.sum(np.array(almacenamiento_conf_mat_train)[5,5])]
 labels = [f"{v1}\n{v2}\n{v3}" for v1, v2, v3 in
           zip(group_names,group_counts,group_percentages)]
 
 labels = np.asarray(labels).reshape(3,3)
 sns.heatmap(df_cf_test_ref,annot=labels, fmt="", cmap='Blues')
-plt.title("Matriz de confusión para modelo refinado con subconjunto de prueba \n(35 capas ocultas, 5 neuronas por capa)")
-plt.savefig('cf_test_con_framework_ref.pdf') 
-files.download("cf_test_con_framework_ref.pdf")
+plt.title("Matriz de confusión para modelo refinado con subconjunto de prueba \n(25 capas ocultas, 25 neuronas por capa)")
+plt.savefig('cf_test_con_framework_ref.png')
+files.download("cf_test_con_framework_ref.png")
 plt.show()
 
 """### Visualización de puntajes variando número de capas ocultas y de neuronas por capa en 2D"""
