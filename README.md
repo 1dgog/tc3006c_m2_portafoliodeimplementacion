@@ -74,8 +74,10 @@ Se separa el dataset en subconjuntos de entrenamiento (113, 13), validación (33
 
 ### Puntajes para subconjuntos de entrenamiento, validación y prueba, variando parámetros
 
-Se presentan los resultados de los puntajes obtenidos variando el número de capas ocultas (5 a 35), y el número de partículas por capa (5 a 35).
+Se presentan los resultados de los puntajes obtenidos variando el número de capas ocultas (5 a 35), y el número de neuronas por capa (5 a 35).
 
+(número de capas ocultas: fila)
+(número de neuronas por capa: columna)
 #### Puntajes para entrenamiento
 
 |    |        5 |       10 |       15 |       20 |       25 |       30 |       35 |
