@@ -1,62 +1,11 @@
 # Portafolio de implementacion para aprendizaje de máquina (módulo 2)
 Javier de Golferichs García A01139500
 
-Se incluye en el README.md secciones para [Sin Framework](##-Sin-Framework) y  [Con Framework](##-Con-Framework) (más abajo)
+La que se usa para el [Portafolio de análisis](https://github.com/1dgog/tc3006c_m2_portafoliodeanalisis) es m2_con_framework.ipynb
 
-Se incluyen .ipynb y .py de ambas entregas (sin y con framework). La que se usa para el [Portafolio de análisis](https://github.com/1dgog/tc3006c_m2_portafoliodeanalisis) es m2_con_framework
+Se incluye en el README.md secciones [Con Framework](##-Con-Framework) y [Sin Framework](##-Sin-Framework) (más abajo)
 
-## Sin Framework
-
-Se usa archivo utilizado es **wines.data**. Se hace una **regresión logística de orden 2** que toma en cuenta **dos características** (alcohol, flavanoids).
-
-Se hicieron columnas dummy binarias con base en la clase (1, 2 o 3), para hacer la clasificación.
-
-Se hizo una vizualización de los datos.
-
-Para hacer la separación en subconjuntos (entrenamiento, validación y prueba), se utilizó sklearn.model_selection.train_test_split.
-
-### Función de clasificación
-
-Se utilizó un $\alpha = 0.05$ y 10000 iteraciones en la función de clasificación.
-La salida de la función de clasificación es:
-
-| |theta inicial| | |J entrenamiento|J validacion|theta refinada |||
-|:----|:----|:----|:----|:----|:----|:----|:----|:----|
-| |0|1|2| | |0|1|2|
-|Clase 1|2|1|0.5|-0.145830812|-0.255904113|-4.528507542|-0.218032685|2.888516617|
-|Clase 2|2|1|0.5|-0.239314728|-0.232469886|10.12620338|-0.87245963|0.335677986|
-|Clase 3|2|1|0.5|-0.068253754|-0.053346059|0.464055325|0.507980433|-5.732727431|
-
-### Predicciones de datos de prueba
-
-Se inserta tabla con predicciones (datos de prueba). Los vectores theta descritos en la tabla corresponden a los de la clase en forma `np.array(1/(1+np.exp(-(theta1[0]+theta1[1]*x_test1_a+theta1[2]*x_test1_b))))`, donde `x_test1_a` y `x_test1_b`, son las entradas de ambas características (alcohol, flavanoids). 
-
-
-|    |   **Real** |   **Prediccion** |   alcohol |   flavanoids |          1 |        2 |           3 |
-|---:|-------:|-------------:|----------:|-------------:|-----------:|---------:|------------:|
-|  0 |      2 |            1 |     12.43 |         3.15 | 0.865317   | 0.583927 | 1.26247e-05 |
-|  1 |      1 |            1 |     13.05 |         3    | 0.784437   | 0.437243 | 4.08737e-05 |
-|  2 |      2 |            2 |     12.6  |         1.36 | 0.0339825  | 0.398848 | 0.282539    |
-|  3 |      2 |            2 |     11.76 |         2.03 | 0.226377   | 0.633556 | 0.00548886  |
-|  4 |      3 |            3 |     13.88 |         0.34 | 0.00139606 | 0.13361  | 0.996188    |
-|  5 |      2 |            1 |     12.37 |         3.1  | 0.849263   | 0.592541 | 1.63106e-05 |
-|  6 |      1 |            1 |     14.83 |         2.98 | 0.699695   | 0.14039  | 0.000113213 |
-|  7 |      3 |            3 |     12.6  |         0.66 | 0.00463581 | 0.344063 | 0.956103    |
-|  8 |      1 |            1 |     13.5  |         2.61 | 0.516764   | 0.315208 | 0.000480296 |
-|  9 |      1 |            1 |     13.24 |         2.69 | 0.587793   | 0.372341 | 0.000266114 |
-| 10 |      2 |            1 |     13.05 |         2.65 | 0.569726   | 0.408578 | 0.000303894 |
-| 11 |      3 |            3 |     13.36 |         0.5  | 0.00247962 | 0.203912 | 0.987682    |
-| 12 |      1 |            1 |     13.39 |         2.94 | 0.739674   | 0.361436 | 6.85208e-05 |
-| 13 |      1 |            1 |     13.73 |         3.25 | 0.865946   | 0.318274 | 1.37737e-05 |
-| 14 |      1 |            1 |     14.21 |         2.65 | 0.506954   | 0.200704 | 0.000547681 |
-
-### Matrices de confusion para subconjuntos de entrenamiento, validación y prueba
-
-Las matrices de confusión corresponden a matrices de multicaso, tal que en la diagonal principal se ubican las predicciones del modelo con las categorías originales.
-
-![cf_train](https://user-images.githubusercontent.com/71610960/190315590-d8b68395-291b-4cd7-ab81-10fe80ce6637.png)
-![cf_valid](https://user-images.githubusercontent.com/71610960/190315600-264f88fa-bf15-4be2-b12f-21c3eebdc624.png)
-![cf_test](https://user-images.githubusercontent.com/71610960/190315605-5d502872-7716-40a3-b954-0adbdefb6e29.png)
+En el repositorio estan archivos .ipynb y .py como solicitado.
 
 ## Con Framework
 
@@ -136,3 +85,55 @@ Se presentan las predicciones realizadas con el subconjunto de prueba, del model
 ![cf_test_con_framework_ini](https://user-images.githubusercontent.com/71610960/190840004-86e83c38-231c-46e2-8bb7-868f1d08b4d7.png)
 ![cf_test_con_framework_ref](https://user-images.githubusercontent.com/71610960/190840005-0c297c9b-1f19-41c6-a0d7-d0ffe90e0cf6.png)
 
+## Sin Framework
+
+Se usa archivo utilizado es **wines.data**. Se hace una **regresión logística de orden 2** que toma en cuenta **dos características** (alcohol, flavanoids).
+
+Se hicieron columnas dummy binarias con base en la clase (1, 2 o 3), para hacer la clasificación.
+
+Se hizo una vizualización de los datos.
+
+Para hacer la separación en subconjuntos (entrenamiento, validación y prueba), se utilizó sklearn.model_selection.train_test_split.
+
+### Función de clasificación
+
+Se utilizó un $\alpha = 0.05$ y 10000 iteraciones en la función de clasificación.
+La salida de la función de clasificación es:
+
+| |theta inicial| | |J entrenamiento|J validacion|theta refinada |||
+|:----|:----|:----|:----|:----|:----|:----|:----|:----|
+| |0|1|2| | |0|1|2|
+|Clase 1|2|1|0.5|-0.145830812|-0.255904113|-4.528507542|-0.218032685|2.888516617|
+|Clase 2|2|1|0.5|-0.239314728|-0.232469886|10.12620338|-0.87245963|0.335677986|
+|Clase 3|2|1|0.5|-0.068253754|-0.053346059|0.464055325|0.507980433|-5.732727431|
+
+### Predicciones de datos de prueba
+
+Se inserta tabla con predicciones (datos de prueba). Los vectores theta descritos en la tabla corresponden a los de la clase en forma `np.array(1/(1+np.exp(-(theta1[0]+theta1[1]*x_test1_a+theta1[2]*x_test1_b))))`, donde `x_test1_a` y `x_test1_b`, son las entradas de ambas características (alcohol, flavanoids). 
+
+
+|    |   **Real** |   **Prediccion** |   alcohol |   flavanoids |          1 |        2 |           3 |
+|---:|-------:|-------------:|----------:|-------------:|-----------:|---------:|------------:|
+|  0 |      2 |            1 |     12.43 |         3.15 | 0.865317   | 0.583927 | 1.26247e-05 |
+|  1 |      1 |            1 |     13.05 |         3    | 0.784437   | 0.437243 | 4.08737e-05 |
+|  2 |      2 |            2 |     12.6  |         1.36 | 0.0339825  | 0.398848 | 0.282539    |
+|  3 |      2 |            2 |     11.76 |         2.03 | 0.226377   | 0.633556 | 0.00548886  |
+|  4 |      3 |            3 |     13.88 |         0.34 | 0.00139606 | 0.13361  | 0.996188    |
+|  5 |      2 |            1 |     12.37 |         3.1  | 0.849263   | 0.592541 | 1.63106e-05 |
+|  6 |      1 |            1 |     14.83 |         2.98 | 0.699695   | 0.14039  | 0.000113213 |
+|  7 |      3 |            3 |     12.6  |         0.66 | 0.00463581 | 0.344063 | 0.956103    |
+|  8 |      1 |            1 |     13.5  |         2.61 | 0.516764   | 0.315208 | 0.000480296 |
+|  9 |      1 |            1 |     13.24 |         2.69 | 0.587793   | 0.372341 | 0.000266114 |
+| 10 |      2 |            1 |     13.05 |         2.65 | 0.569726   | 0.408578 | 0.000303894 |
+| 11 |      3 |            3 |     13.36 |         0.5  | 0.00247962 | 0.203912 | 0.987682    |
+| 12 |      1 |            1 |     13.39 |         2.94 | 0.739674   | 0.361436 | 6.85208e-05 |
+| 13 |      1 |            1 |     13.73 |         3.25 | 0.865946   | 0.318274 | 1.37737e-05 |
+| 14 |      1 |            1 |     14.21 |         2.65 | 0.506954   | 0.200704 | 0.000547681 |
+
+### Matrices de confusion para subconjuntos de entrenamiento, validación y prueba
+
+Las matrices de confusión corresponden a matrices de multicaso, tal que en la diagonal principal se ubican las predicciones del modelo con las categorías originales.
+
+![cf_train](https://user-images.githubusercontent.com/71610960/190315590-d8b68395-291b-4cd7-ab81-10fe80ce6637.png)
+![cf_valid](https://user-images.githubusercontent.com/71610960/190315600-264f88fa-bf15-4be2-b12f-21c3eebdc624.png)
+![cf_test](https://user-images.githubusercontent.com/71610960/190315605-5d502872-7716-40a3-b954-0adbdefb6e29.png)
