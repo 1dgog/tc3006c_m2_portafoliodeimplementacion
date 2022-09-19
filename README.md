@@ -1,7 +1,7 @@
 # Portafolio de implementacion para aprendizaje de máquina (módulo 2)
 Javier de Golferichs García A01139500
 
-La que se usa para el [Portafolio de análisis](https://github.com/1dgog/tc3006c_m2_portafoliodeanalisis) es m2_con_framework.ipynb
+La que se usa para el [Portafolio de análisis](https://github.com/1dgog/tc3006c_m2_portafoliodeanalisis) es [m2_con_framework.ipynb](https://github.com/1dgog/tc3006c_m2_portafoliodeimplementacion/blob/b47cbeb8ba349b2356376d3651a8c534d482707c/m2_con_framework.ipynb)
 
 Se incluye en el README.md secciones [Con Framework](##-Con-Framework) y [Sin Framework](##-Sin-Framework) (más abajo)
 
